@@ -8,6 +8,20 @@
         window.addEventListener("load", () => {
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
+
+            let navLinks = document.getElementsByTagName("a");
+
+            for(let i=0; i<navLinks.length; i++){
+                let aLink = navLinks[i];
+                aLink.addEventListener("click", function(event){
+                    let link = aLink.textContent;
+                    let ele = document.getElementsByTagName("h1");
+                    ele.textContent = link;
+
+                    document.title = link;
+                    updateCurrentPage(link);
+                })
+            }
         });
         function getCurrentSelection() {
             setTimeout(() => {
@@ -20,6 +34,35 @@
     </script>
     <style>
         /* TODO: make edits here */
+
+        nav li{
+            display: inline;
+            list-style: none;
+        } 
+
+        nav{
+            background-color: #dddddd;
+        }
+
+        a:hover{
+            background-color: #ED9987;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        h3~ul li:before{
+            content:'✓'
+        }
+
+        h1, a{
+            text-transform: capitalize;
+        }
+
+        h3{
+            color: #AC7FEE;
+        }
     </style>
     <!-- make the necessary edits above this line -->
 
