@@ -1,0 +1,67 @@
+<table><tr><td> <em>Assignment: </em> IT202 JavaScript and CSS Challenge</td></tr>
+<tr><td> <em>Student: </em> Erik Lopez (el286)</td></tr>
+<tr><td> <em>Generated: </em> 10/2/2023 9:18:26 PM</td></tr>
+<tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-007-F23/it202-javascript-and-css-challenge/grade/el286" target="_blank">Grading</a></td></tr></table>
+<table><tr><td> <em>Instructions: </em> <ul><li>Reminder: Make sure you start in dev and it's up to date<ol><li><code>git checkout dev</code></li><li><code>git pull origin dev</code></li><li><code>git checkout -b M3-Challenge-HW</code></li></ol></li></ul><ol><li>Create a copy of the template given here:&nbsp;<a href="https://gist.github.com/MattToegel/77e4b66e3c73c074ea215562ebce717c">https://gist.github.com/MattToegel/77e4b66e3c73c074ea215562ebce717c</a></li><li>Implement the changes defined in the body of the code</li><ol><li>Hint: You may want to use your browser's developer tools to see the script that's pulled in, this may help with a few challenges</li></ol><li><strong>Do not</strong>&nbsp;edit anything where the comments tell you not to edit, you will lose points for not following directions</li><li>Make changes where the comments tell you (via TODO's or just above the lines that tell you not to edit below)<ol><li><strong>Hint</strong>: Just change things in the designated&nbsp;<code>&lt;style&gt;</code>&nbsp;and&nbsp;<code>&lt;script&gt;</code>&nbsp;tags</li><li><strong>Important</strong>: The function that drives one of the challenges is&nbsp;<code>updateCurrentPage(str)</code>&nbsp;which takes 1 parameter, a string of the word to display as the current page. This function is not included in the code of the page, along with a few other things, are linked via an external js file. Make sure you do not delete this line.</li></ol></li><li>Create a branch called M3-Challenge-HW if you haven't yet</li><li>Add this template to that branch (git add/git commit)</li><li>Make a pull request for this branch once you push it</li><li>You may manually deploy the HW branch to dev to get the evidence for the below prompts</li><li>Create a new file&nbsp;<strong>m3_submission.md</strong>&nbsp;file in the hw branch and fill it with the output generated from this page (be careful not to paste more than once)</li><li>Add, commit, and push the submission file</li><li>Close the pull request by merging it to dev (double-check all looks good on dev)</li><li>Manually create a new pull request from dev to prod (i.e., base: prod &lt;- compare: dev)</li><li>Complete the merge to deploy to production</li><li>Submit the direct link of the m3_submission.md from the prod branch to Canvas for this submission</li></ol><style>` and `<script>` tags
+    2. **Important**: The function that drives one of the challenges is `updateCurrentPage(str)` which takes 1 parameter, a string of the word to display as the current page. This function is not included in the code of the page, along with a few other things, are linked via an external js file. Make sure you do not delete this line.  
+5. Create a branch called M3-Challenge-HW if you haven't yet
+6. Add this template to that branch (git add/git commit)
+7. Make a pull request for this branch once you push it
+8. You may manually deploy the HW branch to dev to get the evidence for the below prompts
+9. Create a new file **m3_submission.md** file in the hw branch and fill it with the output generated from this page (be careful not to paste more than once)
+10. Add, commit, and push the submission file
+11. Close the pull request by merging it to dev (double-check all looks good on dev)
+12. Manually create a new pull request from dev to prod (i.e., base: prod <- compare: dev)
+13. Complete the merge to deploy to production
+14. Submit the direct link of the m3_submission.md from the prod branch to Canvas for this submission
+</style></td></tr></table>
+<table><tr><td> <em>Deliverable 1: </em> Completed Challenge Screenshots </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> 5 Screenshots based on the checklist items for this task</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fel286%2F2023-10-02T20.09.03image.png.webp?alt=media&token=cf89acbd-ae00-4359-9a27-952a3c479135"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Primary page with the checklist items and css<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fel286%2F2023-10-02T20.11.17image.png.webp?alt=media&token=d19b43fb-83ba-4326-bd5d-e7ab87ae8deb"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Login page when login link is clicked<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fel286%2F2023-10-02T20.12.54image.png.webp?alt=media&token=d3513b97-c112-455d-b694-1ff18522a86b"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Register page when register link is clicked<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fel286%2F2023-10-02T20.14.02image.png.webp?alt=media&token=5e8afa65-c300-4b0d-b609-153d4efc7327"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Profile page when page link is clicked<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fel286%2F2023-10-02T20.15.35image.png.webp?alt=media&token=7db97752-c564-44be-8ccc-e382f253574c"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Login page when login link is clicked<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 2: </em> Explain Solutions (Grader use this section to determine completion of each challenge) </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Briefly explain how you made the navigation horizontal</td></tr>
+<tr><td> <em>Response:</em> <p>Since the li in the navigation (nav li) is basically a block element,<br>I set the display to being inline which means it won&#39;t start from<br>a new line.&nbsp;&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Briefly explain how you remove the navigation list item markers</td></tr>
+<tr><td> <em>Response:</em> <p>When I set the navigation to horizontal, it basically removed the the item<br>markers automatically, however, I simply used &quot;list-style: none&quot; just in case.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 3: </em> Briefly explain how you gave the navigation a background</td></tr>
+<tr><td> <em>Response:</em> <p>Simply chose the nav tag as my selector and added a background color<br>to it which is a grey color.<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Briefly explain how you made the links (or their surrounding area) change color on mouseover/hover</td></tr>
+<tr><td> <em>Response:</em> <p>I went over the &quot;CSS Selector Reference&quot; and found &quot;a:hover&quot;. Whenever the move<br>hovers over the links it&#39;ll be selected. In this case, whenever it&#39;s hovered,<br>I made their surrounding area to be a reddish color using &quot;background-color&quot;.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 5: </em> Briefly explain how you changed the challenge list bullet points to checkmarks (✓)</td></tr>
+<tr><td> <em>Response:</em> <p>I did a bit of digging and used the &quot;content&quot; property to make<br>the bullet points to checkmarks. The content property is used along with ::before,<br>which in this case it&#39;ll be before the list so, li::before.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 6: </em> Briefly explain how you made the first character of the h1 tags and anchor tags uppercased</td></tr>
+<tr><td> <em>Response:</em> <p>At first I had h1, a { text-transform: uppercase;}, but realized that it<br>uppercased all of the letters which is not part of the objective. Using<br>the text-transform, I used another value which is &quot;capitalize&quot; and it capitalizes the<br>first character of each word.<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 7: </em> Briefly explain/describe your custom styling of your choice</td></tr>
+<tr><td> <em>Response:</em> <p>I simply chose to style the h3 which displays &quot;Challenge&quot; and made it<br>to be a light purple color by selecting the h3 and using &quot;color&quot;<br>to change the color.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 8: </em> Briefly explain how the styling for the challenge list doesn't impact the navigation list</td></tr>
+<tr><td> <em>Response:</em> <p>The styling for the challenge list doesn&#39;t impact the navigation list due the<br>amount of specificity. For instance, making the bullet points to checkmarks by just<br>using li::before{content:&#39;✓&#39;;} will effect the navigation list by adding checkmarks to it. In<br>order for this to not impact the navigation, I specified a bit more<br>on the li and used h3~ul li::before{content:&#39;✓&#39;;}. It focuses from the h3 below.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 9: </em> Briefly explain how you updated the content of the h1 tag with the link text</td></tr>
+<tr><td> <em>Response:</em> <p>I started off by declaring a variable that holds a DOM method &quot;getElementsByTagName&quot;<br>that finds the &quot;a&quot; element. Using that method will find all of the<br>&quot;a&quot; elements which targets that login, register, profile, and logout. Now, in order<br>to go through each in one of these links, I used a for<br>loop. Inside the for loop, I declared another variable in which it holds<br>the index value specific value of the &quot;links&quot; (login, register, profile, and logout).<br>I then attached an event listener that holds an event which is &quot;click&quot;,<br>and an anonymous function (function(event)). When the link is clicked, it gives out<br>a set of instructions, in this case the anonymous function is called. It<br>listens to the &quot;click&quot; event and once it&#39;s clicked, the h1 tag and<br>title tag should update its content.&nbsp;<div><br></div><div>Furthermore, I declared a variable that holds the<br>textContent of the specified index value and another variable that contains a DOM<br>method &quot;getElementsByTagName&quot; that finds the &quot;h1&quot; element. We only have one h1 so<br>it doesn&#39;t really matter in terms of using the specific method I used.<br>In my code have the variable declared as &quot;ele&quot; and it&#39;s then used<br>as ele.textContent = link; which updates the text content of the h1 to<br>the one of the links.&nbsp;</div><br></p><br></td></tr>
+<tr><td> <em>Sub-Task 10: </em> Briefly explain how you updated the content of the title tag with the link text</td></tr>
+<tr><td> <em>Response:</em> <p>In order to target the title,&nbsp; I used the title property which is<br>document.title and set it equal to the variable &quot;link&quot; to which it contains<br>the textContent of the link.&nbsp;<br></p><br></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 3: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Comment briefly talking about what you learned and/or any difficulties you encountered and how you resolved them (or attempted to)</td></tr>
+<tr><td> <em>Response:</em> <p>The main difficulties I&#39;ve encountered was to come about doing the the whole<br>process of changing the text content to another when the links were clicked.<br>I&#39;ve gone through so many documentation in order to grasp some understanding on<br>how to come about the problem. Some of them have similar ways of<br>approaching the problem in terms of using the event listener and how the<br>DOM is used. Thanks to the &quot;basic breakdown&quot;&nbsp; that professor Toegel put out<br>there. It really helped in layering out the code in order tackle the<br>problem and come with some solution. A lot of trial and error and<br>getting the comprehension of what each any part of the DOM is used.&nbsp;<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Add a link to your pull request (hw branch to dev only)</td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/ElLopez21/el286-IT202-007/pull/10">https://github.com/ElLopez21/el286-IT202-007/pull/10</a> </td></tr>
+<tr><td> <em>Sub-Task 3: </em> Add a link to your solution html file from prod (again you can assume the url at this point)</td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://el286-prod-7114b762171a.herokuapp.com/M3/challenge.html">https://el286-prod-7114b762171a.herokuapp.com/M3/challenge.html</a> </td></tr>
+</table></td></tr>
+<table><tr><td><em>Grading Link: </em><a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-007-F23/it202-javascript-and-css-challenge/grade/el286" target="_blank">Grading</a></td></tr></table>
