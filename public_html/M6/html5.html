@@ -1,34 +1,44 @@
 <html> 
+    <head>
+        <style>
+            #canvas {
+                width: 600px;
+                height: 400px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
     <body>
+        <canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
         <script>
-            
+
             // Collect The Square game
-        
+
             // Get a reference to the canvas DOM element
             var canvas = document.getElementById('canvas');
             // Get the canvas drawing context
             var context = canvas.getContext('2d');
-        
+
             // Your score
             var score = 0;
-        
+
             // Properties for your square
             var x = 50; // X position
             var y = 100; // Y position
             var speed = 6; // Distance to move each frame
             var sideLength = 50; // Length of each side of the square
-            
+
             // FLags to track which keys are pressed
             var down = false;
             var up = false;
             var right = false;
             var left = false;
-            
+
             // Properties for the target square
             var targetX = 0;
             var targetY = 0;
             var targetLength = 25;
-            
+
             // Determine if number a is within the range b to c (exclusive)
             function isWithin(a, b, c) {
               return (a > b && a < c);
@@ -75,6 +85,14 @@
               }
             });
 
+            //target drawing 
+            function targetDraw(){
+              // Draw the target 
+              context.fillStyle = '#00FF00';
+              context.fillRect(targetX, targetY, targetLength, targetLength);
+
+            }
+
             // Show the start menu
             function menu() {
               erase();
@@ -92,21 +110,21 @@
 
             // Start the game
             function startGame() {
-                // Reduce the countdown timer ever second
+            	// Reduce the countdown timer ever second
               id = setInterval(function() {
                 countdown--;
               }, 1000)
               // Stop listening for click events
               canvas.removeEventListener('click', startGame);
               // Put the target at a random starting point
-                moveTarget();
+            	moveTarget();
               // Kick off the draw loop
               draw();
             }
 
             // Show the game over screen
             function endGame() {
-                // Stop the countdown
+            	// Stop the countdown
               clearInterval(id);
               // Display the final score
               erase();
