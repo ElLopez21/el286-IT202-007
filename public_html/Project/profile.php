@@ -125,11 +125,32 @@ $username = get_username();
         let con = form.confirmPassword.value;
         let isValid = true;
         //TODO add other client side validation....
+        
+        let email = form.email.value;
+        let emailReg = /^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        let username = form.username.value;
+        let usernameReg = /^[a-z0-9_-]{3,16}$/;
+        let cp = form.currentPassword.value;
+        let passwordsReg = /^.{8,}$/;
 
         //example of using flash via javascript
         //find the flash container, create a new element, appendChild
         if (pw !== con) {
             flash("Password and Confrim password must match", "warning");
+            isValid = false;
+        }
+        if (!emailReg.test(email)){
+            flash("Invalid Email", "warning");
+            isValid = false;
+        }
+        if (!usernameReg.test(username)){
+            flash("Username must only contain 3-16 characters a-z, 0-9, _ , or -", "warning");
+        }
+        if (cp.trim() === '' || pw.trim() === '' || con.trim() === ''){
+            flash("Passwords can't be empty", "warning");
+            isValid = false;
+        } else if(!passwordsReg.test(pw)){
+            flash("Password must be at least 8 characters", "warning");
             isValid = false;
         }
         return isValid;

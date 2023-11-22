@@ -17,6 +17,31 @@ require(__DIR__ . "/../../partials/nav.php");
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
 
+        let email = form.email.value;
+        let emailReg = /^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        let password = form.password.value;
+        let passwordReg = /^.{8,}$/;
+
+        if (email.trim() === '' || email.trim() == null){
+            //alert("Email can't be empty");
+            flash("Email can't be empty", "warning");
+            return false;
+        } else if (!emailReg.test(email)){
+            //alert("Invalid email address");
+            flash("Invalid email address", "warning");
+            return false;
+        } 
+
+        if (password.trim() === '' || password.trim() == null){
+            //alert("Password can't be empty");
+            flash("Password can't be empty", "warning");
+            return false;
+        } else if (!passwordReg.test(password)){
+            //alert("Password must be at least 8 characters");
+            flash("Password must be at least 8 characters", "warning");
+            return false;
+        }
+        
         return true;
     }
 </script>
