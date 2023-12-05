@@ -39,6 +39,9 @@
             var targetY = 0;
             var targetLength = 25;
 
+            var squareDelay = 2000; //ucid:el286 date:12/4
+            var moveSpeed  = 30; //ucid:el286 date:12/4
+
             // Determine if number a is within the range b to c (exclusive)
             function isWithin(a, b, c) {
               return (a > b && a < c);
@@ -138,6 +141,9 @@
             function moveTarget() {
               targetX = Math.round(Math.random() * canvas.width - targetLength);
               targetY = Math.round(Math.random() * canvas.height - targetLength)
+
+              speed = Math.min(5 + score/5, moveSpeed); //el286 12/4
+            
             }
 
             // Clear the canvas
@@ -178,10 +184,14 @@
               // Collide with the target
               if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
                 if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
+
+                  
                   // Respawn the target
                   moveTarget();
                   // Increase the score
                   score++;
+                  setTimeout(moveTarget, squareDelay);
+                  
                 }
               }
               // Draw the square
