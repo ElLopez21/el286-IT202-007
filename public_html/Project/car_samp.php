@@ -2,64 +2,99 @@
 require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../lib/api_helper.php");
 
-// Define parameters
 $params = [];
-$year = se("year", null, 2015, false);
+// $year = se("year", null, 2015, false);
+$year = isset($_POST['year']) ? $_POST['year'] : 2015;
 
 // Ensure that the year is within a valid range
 if ($year < 2015 || $year > 2020) {
-    $year = 2020;
+    $year = 2017;
 }
 
 $params["year"] = $year;
 
-//$make = custom_get('make');
-// if ($make !== null) {
-//     $params["make"] = $make;
-// }
-if(isset($make)){
-    $params["make"] = $make;
-  }
+$verbose = se("yes", null, "yes", false);
+$params["verbose"] = $verbose; 
 
-// You can add more parameters as needed
-
-// API request
 try {
-    $results = get("https://car-api2.p.rapidapi.com/api/models", "CAR_API_KEY",$params, true, "car-api2.p.rapidapi.com");
+    $response = get("https://car-api2.p.rapidapi.com/api/models", "CAR_API_KEY", $params, true, "car-api2.p.rapidapi.com");
+    $responseData = json_decode($response['response'], true);
 
-    // Log the response
-    error_log("Response: " . var_export($results, true));
-
-    // Process $results as needed
-    $statusCode = $results["status"];
-    $responseBody = $results["response"];
-
-    if ($statusCode == 200 && isset($responseBody)) {
-        // Successfully received data, you can parse and use $responseBody
-        $result = json_decode($responseBody, true);
-
-        // Display the data in HTML
-        echo '<html>';
-        echo '<head><title>Car API Data</title></head>';
-        echo '<body>';
-        echo '<h1>Car API Data</h1>';
-        
-        // Display specific data, adjust based on the actual structure of the API response
-        echo '<p>Make: ' . se($result, "make") . '</p>';
-        echo '<p>year: ' . se($result, "year") . '</p>';
-        // Add more fields as needed
-        
-        echo '</body>';
-        echo '</html>';
-    } else {
-        // Handle errors based on the status code
-        $result = [];
-        echo "Error: HTTP Status Code " . $statusCode . ", Response: " . $responseBody;
+    //if decoding was successful
+    if ($responseData === null && json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception("Error decoding JSON data");
     }
-
-    // Continue with any additional processing based on $result
 } catch (Exception $e) {
-    // Handle exceptions, e.g., missing or empty API key
-    flash("An unexpected error occurred, please try again", "danger");
+    $errorMessage = "Error fetching car API data. " . $e->getMessage(); //API request error
 }
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Car API Data</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Car API Data</h2>
+
+        <form method="post" action="">
+            <div class="mb-3">
+                <label for="year">Select Year:</label>
+                <select name="year" id="year">
+                    <?php
+                    //$selectedYear = isset($params['year']) ? $params['year'] : 2020;
+                    for ($i = 2015; $i <= 2020; $i++) {
+                        echo "<option value=\"$i\" " . ($i == $year ? "selected" : "") . ">$i</option>";
+                        // if ($selectedYear == $i) {
+                        //     echo " selected";
+                        // }
+                        // echo ">$i</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <button type="submit" >Submit</button>
+        </form>
+
+        <?php if (isset($errorMessage)) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($responseData['data']) && !empty($responseData['data'])) : ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Model ID</th>
+                        <th>Model Name</th>
+                        <th>Make ID</th>
+                        <th>Make Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($responseData['data'] as $car) : ?>
+                        <tr>
+                            <td><?php safer_echo($car['id']); ?></td>
+                            <td><?php safer_echo($car['make_id']); ?></td>
+                            <td><?php safer_echo($car['name']); ?></td>
+                            <td><?php safer_echo($car['make']['id']); ?></td>
+                            <td><?php safer_echo($car['make']['name']); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+
+</body>
+
+</html>
