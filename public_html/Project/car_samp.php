@@ -3,11 +3,12 @@ require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../lib/api_helper.php");
 
 $params = [];
-$year = se("year", null, 2015, false);
+// $year = se("year", null, 2015, false);
+$year = isset($_POST['year']) ? $_POST['year'] : 2015;
 
 // Ensure that the year is within a valid range
 if ($year < 2015 || $year > 2020) {
-    $year = 2020;
+    $year = 2017;
 }
 
 $params["year"] = $year;
@@ -41,6 +42,25 @@ try {
 <body>
     <div class="container mt-5">
         <h2>Car API Data</h2>
+
+        <form method="post" action="">
+            <div class="mb-3">
+                <label for="year">Select Year:</label>
+                <select name="year" id="year">
+                    <?php
+                    //$selectedYear = isset($params['year']) ? $params['year'] : 2020;
+                    for ($i = 2015; $i <= 2020; $i++) {
+                        echo "<option value=\"$i\" " . ($i == $year ? "selected" : "") . ">$i</option>";
+                        // if ($selectedYear == $i) {
+                        //     echo " selected";
+                        // }
+                        // echo ">$i</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <button type="submit" >Submit</button>
+        </form>
 
         <?php if (isset($errorMessage)) : ?>
             <div class="alert alert-danger" role="alert">
