@@ -1,9 +1,7 @@
 <?php
-
 require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../lib/api_helper.php");
 //require_once(__DIR__ . "/../../lib/db.php");
-
 function map_data($api_data){
     $records=[];
 
@@ -61,5 +59,3 @@ try {
     $errorMess = "Error fetching data" . $e->getMessage();
     error_log(var_export($errorMess, true));
 }
-
-?>
