@@ -1,0 +1,4 @@
+ALTER TABLE `CAR_DATA`
+ADD COLUMN `year` INT NOT NULL DEFAULT 2020 AFTER `make_name`;
+ADD COLUMN `car_name` VARCHAR(255) AFTER `year`,
+ADD COLUMN `car_model` VARCHAR(255) AFTER `car_name`;
