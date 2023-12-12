@@ -87,8 +87,10 @@ try {
                     <tr>
                         <th>Car ID</th>
                         <th>Make ID</th>
-                        <th>Name</th>
+                        <th>Model</th>
                         <th>Make Name</th>
+                        <th>User Make</th>
+                        <th>User Model</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -99,6 +101,9 @@ try {
                             <td><?php echo htmlspecialchars($car['make_id']); ?></td>
                             <td><?php echo htmlspecialchars($car['name_m']); ?></td>
                             <td><?php echo htmlspecialchars($car['make_name']); ?></td>
+                            <td><?php echo htmlspecialchars($car['car_name']); ?></td>
+                            <td><?php echo htmlspecialchars($car['car_model']); ?></td>
+            
                             <td>
                                 <a href="single_view.php?id=<?php echo $car['car_id']; ?>">View</a>
                                 <a href="delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
