@@ -12,7 +12,7 @@ try {
         $sortField = isset($_GET['sort']) ? $_GET['sort'] : 'car_id';
         $sortOr = isset($_GET['direction']) ? $_GET['direction'] : 'asc';
 
-        $stmt = $db->prepare("SELECT * FROM CAR_DATA ORDER BY $sortField $sortOr LIMIT :limit");
+        $stmt = $db->prepare("SELECT DISTINCT car_id, make_id, name_m, make_name FROM CAR_DATA ORDER BY $sortField $sortOr LIMIT :limit");
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -21,7 +21,7 @@ try {
          $limit = 10;
          $sortField = 'car_id';
          $sortOr = 'asc';
-         $stmt= $db->prepare("SELECT * FROM CAR_DATA ORDER BY $sortField $sortOr LIMIT :limit");
+         $stmt= $db->prepare("SELECT DISTINCT car_id, make_id, name_m, make_name FROM CAR_DATA ORDER BY $sortField $sortOr LIMIT :limit");
          $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
          $stmt->execute();
 
@@ -86,8 +86,8 @@ try {
                 <thead>
                     <tr>
                         <th>Car ID</th>
-                        <th>Make ID</th>
-                        <th>Model</th>
+                        <!-- <th>Make ID</th> -->
+                        <th>Name</th>
                         <th>Make Name</th>
                         <th>User Make</th>
                         <th>User Model</th>
@@ -98,14 +98,14 @@ try {
                     <?php foreach ($carData as $car) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($car['car_id']); ?></td>
-                            <td><?php echo htmlspecialchars($car['make_id']); ?></td>
+                            <!-- <td><//?php echo htmlspecialchars($car['make_id']); ?></td> -->
                             <td><?php echo htmlspecialchars($car['name_m']); ?></td>
                             <td><?php echo htmlspecialchars($car['make_name']); ?></td>
                             <td><?php echo htmlspecialchars($car['car_name']); ?></td>
                             <td><?php echo htmlspecialchars($car['car_model']); ?></td>
             
                             <td>
-                                <a href="single_view.php?id=<?php echo $car['car_id']; ?>">View</a>
+                                <a href="car_view.php?id=<?php echo $car['car_id']; ?>">View</a>
                                 <a href="delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
                                 <a href="edit.php?id=<?php echo $car['car_id']; ?>">Edit</a>
                             </td>
