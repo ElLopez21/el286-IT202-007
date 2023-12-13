@@ -107,7 +107,7 @@ try {
                             <td>
                                 <a href="car_view.php?id=<?php echo $car['car_id']; ?>">View</a>
                                 <a href="delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
-                                <a href="edit.php?id=<?php echo $car['car_id']; ?>">Edit</a>
+                                <a href="car_edit.php?id=<?php echo $car['car_id']; ?>">Edit</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
