@@ -23,17 +23,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     else{
         try{
             $db = getDB();
-            // $stmt = $db->prepare("SELECT COUNT(*) FROM CAR_DATA WHERE car_name = :carName AND car_model = :carModel");
-
-            // $stmt->bindParam(':carName', $carName, PDO::PARAM_STR);
-            // $stmt->bindParam(':carModel', $carModel, PDO::PARAM_STR);
-
-            // $stmt->execute();
-            // $count = $stmt->fetchColumn();
-
-            // if($count>0){
-            //     flash("Car with the same name and model already exists.", "warning");
-            // } else{
             $stmt = $db->prepare("INSERT INTO CAR_DATA (car_name, car_model) VALUES (:carName, :carModel)");
             $stmt->bindParam(':carName', $carName, PDO::PARAM_STR);
             $stmt->bindParam(':carModel', $carModel, PDO::PARAM_STR);
