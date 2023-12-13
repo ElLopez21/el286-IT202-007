@@ -90,7 +90,7 @@ try {
                         <th>Name</th>
                         <th>Make Name</th>
                         <th>User Make</th>
-                        <th>User Model</th>
+                        <!-- <th>User Model</th> -->
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -102,12 +102,12 @@ try {
                             <td><?php echo htmlspecialchars($car['name_m']); ?></td>
                             <td><?php echo htmlspecialchars($car['make_name']); ?></td>
                             <td><?php echo htmlspecialchars($car['car_name']); ?></td>
-                            <td><?php echo htmlspecialchars($car['car_model']); ?></td>
+                            <!-- <td><//?php echo htmlspecialchars($car['car_model']); ?></td> -->
             
                             <td>
                                 <a href="car_view.php?id=<?php echo $car['car_id']; ?>">View</a>
-                                <a href="delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
                                 <a href="car_edit.php?id=<?php echo $car['car_id']; ?>">Edit</a>
+                                <a href="car_delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
