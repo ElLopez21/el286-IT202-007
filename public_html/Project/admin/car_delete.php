@@ -1,5 +1,10 @@
 <?php
+require(__DIR__ . "/../../../partials/nav.php");
+?>
 
+<?php
+
+//ucid: el286 12/13
 try{
     $db = getDB();
 
@@ -45,3 +50,7 @@ try{
         <p class = "alert alert-danger"> Car Not found</p>
     <?php endif; ?>
 </div>
+
+<?php
+require(__DIR__ . "/../../../partials/flash.php");
+?>

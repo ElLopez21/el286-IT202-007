@@ -1,15 +1,16 @@
 <?php
-require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__ . "/../../../partials/nav.php");
 ?>
 
 <?php
 
+//ucid: el286 12/13
 try{
     $db = getDB();
 
     if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
         flash("Invalid car Id", "danger");
-        die(header("Location: car_list_samp.php"));
+        die(header("Location: $BASE_PATH" . "/car_list_samp.php"));
     }
 
     $carId = $_GET['id'];
@@ -22,7 +23,7 @@ try{
 
     if(!$carExist){
         flash("Car can't be found", "danger");
-        die(header("Location: car_list_samp.php"));
+        die(header("Location: $BASE_PATH" . "/car_list_samp.php"));
     }
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
@@ -87,5 +88,5 @@ try{
 </div>
 
 <?php
-require_once(__DIR__ . "/../../partials/flash.php");
+require_once(__DIR__ . "/../../../partials/flash.php");
 ?>

@@ -1,7 +1,9 @@
 <?php
 
-require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__ . "/../../../partials/nav.php");
 
+
+//ucid: el286 12/13
 if($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $carName = $_POST['car_name'] ?? '';
@@ -71,5 +73,5 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 </body>
 
 <?php
-require(__DIR__ . "/../../partials/flash.php");
+require(__DIR__ . "/../../../partials/flash.php");
 ?>

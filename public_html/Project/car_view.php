@@ -1,12 +1,11 @@
 <?php
-
 require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../partials/flash.php");
-
 ?>
 
 <?php
 
+//ucid: el286 12/13
 try{
     $db = getDB();
 
@@ -51,8 +50,8 @@ try{
                 </ul>
 
                 <div class = "mt-3">
-                    <a href="car_edit.php?id=<?php echo $car['car_id']; ?>">Edit</a>
-                    <a href="car_delete.php?id=<?php echo $car['car_id']; ?>">Delete</a>
+                    <a href="<?php echo get_url('admin/car_edit.php?id=' . $car['car_id']); ?>">Edit</a>
+                    <a href="<?php echo get_url('admin/car_delete.php?id=' . $car['car_id']); ?>">Delete</a>
                 </div>
             </div>
         </div>
