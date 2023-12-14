@@ -1,6 +1,11 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../partials/flash.php");
+
+if (is_logged_in(true)) {
+    //comment this out if you don't want to see the session variables
+    error_log("Session data: " . var_export($_SESSION, true));
+}
 ?>
 
 <?php
@@ -49,10 +54,12 @@ try{
                     <li class = "list-group-item">Year: <?php echo htmlspecialchars($car['year']); ?></li>
                 </ul>
 
-                <div class = "mt-3">
-                    <a href="<?php echo get_url('admin/car_edit.php?id=' . $car['car_id']); ?>">Edit</a>
-                    <a href="<?php echo get_url('admin/car_delete.php?id=' . $car['car_id']); ?>">Delete</a>
-                </div>
+                <?php if(has_role("Admin")) : ?>
+                    <div class = "mt-3">
+                        <a href="<?php echo get_url('admin/car_edit.php?id=' . $car['car_id']); ?>">Edit</a>
+                        <a href="<?php echo get_url('admin/car_delete.php?id=' . $car['car_id']); ?>">Delete</a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     <?php endif; ?>
