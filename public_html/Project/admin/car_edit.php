@@ -27,8 +27,9 @@ try{
     }
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
-        $carName = $_POST['car_name'] ?? '';
-        $carModel = $_POST['car_model'] ?? '';
+
+        $carName = se($_POST, "car_name", null, false);
+        $carModel = se($_POST, "car_model", null, false);
 
         if(empty($carName)){
             flash("Car Name can't be empty", "warning");
@@ -79,10 +80,10 @@ try{
 
     <form method="POST" class = "mt-3">
         <label for="car_name" class = "form-label">Car Name: </label>
-        <input type="text" id="car_name" class ="form-control" name="car_name" value="<?php htmlspecialchars($carExist['car_name']); ?>">
+        <input type="text" id="car_name" class ="form-control" name="car_name" value="<?php se($carExist['car_name']); ?>">
 
         <label for="car_model">Car Model: </label>
-        <input type="text" id="car_model" class ="form-control" name="car_model" value="<?php htmlspecialchars($carExist['car_model']); ?>">
+        <input type="text" id="car_model" class ="form-control" name="car_model" value="<?php se($carExist['car_model']); ?>">
         <button type="submit" class = "btn btn-primary">Update Car</button>
     </form>
 </div>
