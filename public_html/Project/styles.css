@@ -15,12 +15,12 @@
     font-size: 50px;
 }
 
-nav li{
+/* nav li{
     display: inline; 
-}
+} */
 
 nav li a{
-    color: black;
+    color: green;
     padding: 10px;
 }
 
@@ -28,60 +28,54 @@ nav li a:hover{
     color: white;
 }
 
-nav{
-    position: absolute;
-    top: 100px;
-    text-align: center;
-    padding: 0 40 0 0;
-    font-size: 15px;
-    background-color: #31616f;
-}
+
 
 input{
     border-radius: 30px;
     padding: 10px;
-    background: transparent;
-    width: 100%; 
-    color: rgba(255, 255, 255, 0.829);
+    /* width: 100%;  */
+    /* color: rgba(255, 255, 255, 0.829); */
     border: none;
     outline: none;
-    border: 2px solid #31616f;
 }
 
 body{
-    background-image: url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?q=80&w=2117&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?q=80&w=2117&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
     color: black;
     margin: 0;
     
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
-    min-height: 100vh; 
+    min-height: 100vh;  */
 }
 
 form{
     border: 1px solid white;
     border-radius: 8px;
     box-shadow: 0 0 10px black;
-    width: 400px;
+    /* width: 400px; */
     padding: 35px;
     background-color: #5e888c;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    /* min-height: 100vh;  */
+} 
 
 form div{
     margin-bottom: 20px;
-    /* background-color: red; */
 }
 
 form label{
     display: block;
     margin-bottom: 5px;
-    color: white;
-    /* background-color: blue; */
+    color: black; 
 }
 
 form input[type="submit"]{
@@ -102,9 +96,9 @@ input[value="Search"]{
     margin-top: 20px;
 }
 
-input[value="Toggle Roles"]{
+/* input[value="Toggle Roles"]{
     margin-top: 20px;
-}
+} */
 
 tr form{
     background-color: transparent;
@@ -124,20 +118,21 @@ th, td {
     text-align: left;
 }
 
-th {
-    background-color: #f2f2f2; 
-}
 
-td {
-    width: 50%;
-    color:white;
-}
-
-h1{
+.home{
     color: white;
-    font-size: 50px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1,h2{
+    color: white;
+    font-size: 40px; 
 }
 
 ::placeholder{
-    color: white;
+    color: black;
 }

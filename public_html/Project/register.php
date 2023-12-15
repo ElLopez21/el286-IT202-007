@@ -2,7 +2,16 @@
 require(__DIR__ . "/../../partials/nav.php");
 reset_session();
 ?>
+<div class="container-fluid">
 <form onsubmit="return validate(this)" method="POST">
+    <?php render_input(["type"=>"email", "id"=>"email", "name"=>"email", "label"=>"Email", "rules"=>["required"=>true]]);?>
+    <?php render_input(["type"=>"text", "id"=>"username", "name"=>"username", "label"=>"Username", "rules"=>["required"=>true, "maxlength"=>30]]);?>
+    <?php render_input(["type"=>"password", "id"=>"password", "name"=>"password", "label"=>"Password", "rules"=>["required"=>true, "minlength"=>8]]);?>
+    <?php render_input(["type"=>"password", "id"=>"confirm", "name"=>"confirm", "label"=>"Confirm Password", "rules"=>["required"=>true,"minlength"=>8]]);?>
+    <?php render_button(["text"=>"Register", "type"=>"submit"]);?>
+</form>
+</div>
+<!-- <form onsubmit="return validate(this)" method="POST">
     <div>
         <label for="email">Email</label>
         <input type="text" name="email" required />
@@ -20,7 +29,7 @@ reset_session();
         <input type="password" name="confirm" required minlength="8" />
     </div>
     <input type="submit" value="Register" />
-</form>
+</form> -->
 <script>
     function validate(form) {
         //TODO 1: implement JavaScript validation
