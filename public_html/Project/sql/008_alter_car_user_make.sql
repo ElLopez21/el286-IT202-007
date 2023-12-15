@@ -1,0 +1,2 @@
+ALTER TABLE `CAR_DATA`
+ADD COLUMN `car_name` VARCHAR(255) AFTER `year`;
